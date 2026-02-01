@@ -1,55 +1,52 @@
-body{
-    padding : 0;
-    margin : 0;
+body {
+    padding: 0;
+    margin: 0;
     background: #F5F2F0;
+    font-family: sans-serif; /* Fallback font */
 }
 
-.container-header{
+.container-header {
     padding: 30px 20px;
     width: 100%;
     display: flex;
     justify-content: center;
-    
+    box-sizing: border-box; /* Important pour éviter les débordements */
 }
 
-.header{
-    padding: 12px;
+/* --- DESIGN BUREAU (Par défaut) --- */
+.header {
     width: 80%;
-    padding-inline: 50px;
+    max-width: 1000px; /* Limite la largeur sur les très grands écrans */
+    padding: 12px 50px; /* Padding original */
     background-color: #ffffff;
     border-radius: 50px;
     font-size: 24px;
     box-shadow: 0px 5px 7px 2px rgb(168 156 134 / 10%);
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px; /* Espacement minimum entre les éléments */
 }
 
-.title{
-    color :#197BBD;
+/* Gestion du groupe central (Select + Input) */
+.input-group {
+    display: flex;
+    gap: 10px; /* Espace entre le select et l'input */
+    align-items: center;
+}
+
+.title {
+    color: #197BBD;
     font-family: "Ultra", serif;
     font-weight: 400;
     font-style: normal;
+    white-space: nowrap; /* Empêche le titre de se casser sur 2 lignes */
 }
 
-/* select.header-item{
-    background-color: #e0cea6;
-    padding: 7px 15px;
-    border-radius: 30px;
-    color :#ffffff;
-    font-family: "Google Sans Code", monospace;
-    font-optical-sizing: auto;
-    font-size: 14px;
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: none;
-} */
+/* --- STYLES DES ITEMS (Select, Input, Link) --- */
 
-/* --- Style de base --- */
+/* SELECT */
 select.header-item {
     background-color: #e0cea6;
     color: #ffffff;
@@ -59,126 +56,126 @@ select.header-item {
     border-radius: 30px;
     border: none;
     text-decoration: none;
-
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-
     cursor: pointer;
-    padding: 8px 35px 8px 15px;
+    padding: 10px 35px 10px 15px; /* Un peu plus de padding vertical */
     outline: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: all 0.25s ease-in-out;
-    
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
     background-repeat: no-repeat;
-    background-position: right 12px center; 
+    background-position: right 12px center;
     background-size: 10px;
 }
-
 select.header-item:hover {
     background-color: #dccba0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: translateY(-1px);
 }
-
-
 select.header-item:focus {
     background-color: #ffffff;
-    color: #e0cea6; 
-    
-
-    box-shadow: 0 0 0 3px rgba(224, 206, 166, 0.4); 
+    color: #e0cea6;
+    box-shadow: 0 0 0 3px rgba(224, 206, 166, 0.4);
     transform: translateY(0);
-
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23e0cea6%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
 }
 
-select.header-item option {
-    background-color: #ffffff;
-    color: #333;
-    padding: 10px;
-}
-
-/* input.header-item{
-    background-color: #e0cea6;
-    padding: 7px;
-    border-radius: 30px;
-    color :#ffffff;
-    font-family: "Google Sans Code", monospace;
-    font-optical-sizing: auto;
-    font-size: 14px;
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    border: none;
-    text-align: center;
-    width: 80px;
-} */
-
-
-
-
+/* INPUT NUMBER */
 input.header-item {
     background-color: #e0cea6;
     color: #ffffff;
     font-family: "Google Sans Code", monospace;
     font-size: 14px;
-    font-weight: 500; 
+    font-weight: 500;
     border-radius: 30px;
     border: none;
     text-align: center;
     text-decoration: none;
-
-    
-    width: 80px; 
-    padding: 8px 12px; 
-    outline: none; 
-    
+    width: 60px; /* Largeur ajustée */
+    padding: 10px 12px; /* Un peu plus de padding vertical */
+    outline: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    
     transition: all 0.25s ease-in-out;
-    
     cursor: text;
 }
-
 input.header-item::placeholder {
     color: rgba(255, 255, 255, 0.6);
-    font-style: italic;
 }
-
 input.header-item:hover {
     background-color: #dccba0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transform: translateY(-1px);
 }
-
 input.header-item:focus {
-    background-color: #ffffff; 
+    background-color: #ffffff;
     color: #e0cea6;
-    
-    box-shadow: 0 0 0 3px rgba(224, 206, 166, 0.4); 
+    box-shadow: 0 0 0 3px rgba(224, 206, 166, 0.4);
     transform: translateY(0);
 }
-
+/* Retire les spinners number */
 input.header-item::-webkit-outer-spin-button,
-input.header-item::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-/* Firefox */
-input.header-item[type=number] {
-  -moz-appearance: textfield;
-}
+input.header-item::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input.header-item[type=number] { -moz-appearance: textfield; }
 
-a.header-item{
+/* BOUTON START */
+a.header-item {
     background-color: #197BBD;
-    padding: 7px 15px;
+    padding: 10px 20px; /* Padding augmenté pour match la hauteur des inputs */
     border-radius: 30px;
-    color :#ffffff;
+    color: #ffffff;
     font-family: "Ultra", serif;
     font-weight: 300;
     font-style: normal;
     text-decoration: none;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+a.header-item:hover {
+    background-color: #14669e;
 }
 
+
+/* --- VERSION MOBILE (Responsive) --- */
+/* S'active si l'écran fait moins de 768px (taille tablette/téléphone) */
+@media screen and (max-width: 768px) {
+    
+    .container-header {
+        padding: 15px; /* Moins de marge autour */
+    }
+
+    .header {
+        width: 100%; /* Prend toute la largeur disponible */
+        flex-direction: column; /* On empile les éléments verticalement */
+        padding: 25px 20px; /* Padding réduit sur les côtés */
+        border-radius: 30px; /* Arrondi légèrement réduit */
+        gap: 25px; /* Espace vertical entre Titre, Inputs et Bouton */
+    }
+
+    /* Le groupe Select + Input */
+    .input-group {
+        width: 100%; /* Prend toute la largeur */
+        justify-content: center; /* Centre les éléments */
+        flex-wrap: wrap; /* Permet de passer à la ligne si écran minuscule */
+    }
+
+    /* Ajustement des champs sur mobile */
+    select.header-item, 
+    input.header-item {
+        /* On peut choisir ici : soit 100% width, soit garder la taille */
+        /* Je suggère de garder la taille "pilule" pour le style, mais un peu plus gros */
+        font-size: 16px; /* Texte plus lisible sur mobile */
+    }
+    
+    /* Le Select prend un peu plus de place pour être confortable */
+    select.header-item {
+        flex-grow: 1; /* S'étire pour remplir l'espace */
+        max-width: 200px;
+    }
+
+    /* Le bouton Start prend toute la largeur pour être facile à cliquer */
+    a.header-item {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box; /* Important quand on met width 100% avec padding */
+    }
+}

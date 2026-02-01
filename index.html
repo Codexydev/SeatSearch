@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Ultra&display=swap" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Ultra&display=swap" rel="stylesheet">
@@ -19,18 +14,25 @@
     <div class="container-header">
         <div class="header">
             <div class="title header-item">Seat Search</div>
-            <div>
-                <select class="header-item"name="amphithéâtre" id="amphi-select">
-                    <option value="">--Veuillez choisir une option--</option>
-                    <option value="Paris">Paris</option>
+            
+            <div class="input-group">
+                <select class="header-item" name="amphithéâtre" id="amphi-select">
+                    <option value="">-- Choix Amphi --</option> <option value="Paris">Paris</option>
                     <option value="Recoura">Recoura</option>
                     <option value="Niepce">Niepce</option>
                     <option value="Bernard">Bernard</option>
                     <option value="Gevrey">Gevrey</option>
                 </select>
-                <input class="header-item" type="number" id="tentacles" name="tentacles" min="10" max="100" placeholder="Numéro"/>
+                <input class="header-item" type="number" id="tentacles" name="tentacles" min="10" max="100" placeholder="N°"/>
             </div>
-            <a class="header-item" href="">Start</a>
+
+            <a class="header-item btn-start" href="">Start</a>
+        </div>
+    </div>
+
+    <div class="container-global">
+        <div class="container-seats" id="seats-container">
+            <!-- Seats will be dynamically generated here -->
         </div>
     </div>
 </body>
