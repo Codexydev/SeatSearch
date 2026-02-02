@@ -15,6 +15,17 @@ body {
     box-sizing: border-box;
 }
 
+@keyframes load-bounce {
+    20% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 100;
+    }
+
+}
+
 /* --- HEADER (Version Desktop) --- */
 .header {
     width: 80%;
@@ -32,6 +43,9 @@ body {
     
     transform: translateY(0); 
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); 
+
+    animation: load-bounce 2.6s cubic-bezier(0.280, 0.840, 0.420, 1.000) forwards;
+    opacity: 0;
 }
 
 
@@ -194,8 +208,25 @@ svg {
     z-index: 10;
     position: fixed;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    /* left: 50%;
+    transform: translateX(-50%); */
+
+    animation: load-footer 2.6s cubic-bezier(0.280, 0.840, 0.420, 1.000) forwards;
+    opacity: 0;
+}
+
+@keyframes load-footer {
+    0%{
+        transform: translateY(10vh);
+    }
+
+    35%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }
 
 body {
