@@ -22,14 +22,21 @@ body {
     padding: 12px 50px;
     background-color: #ffffff;
     border-radius: 50px;
-    font-size: 24px;
     box-shadow: 0px 5px 7px 2px rgb(168 156 134 / 10%);
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    z-index: 10;
+    z-index: 100;
     position: relative;
+    
+    transform: translateY(0); 
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+
+.header.centered {
+    transform: translateY(35vh);
 }
 
 .title {
@@ -114,6 +121,16 @@ a.header-item {
 a.header-item:hover { background-color: #14669e; }
 
 /* --- CARTE / AMPHI (Desktop) --- */
+.container-global{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    transition-delay: .2s;
+}
+
+#amphi-container.visible {
+    opacity: 1;
+}
+
 .amphi-container {
     width: 95%;
     max-width: 1000px;

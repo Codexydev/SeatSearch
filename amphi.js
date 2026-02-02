@@ -64,3 +64,12 @@ for (let r = 0; r < config.rows; r++) {
         }
     });
 }
+
+// --- FONCTION DE RECHERCHE ---
+function startSearch(event) {
+    event.preventDefault(); 
+    const header = document.getElementById('header');
+    header.classList.remove('centered');
+    console.log("Animation lancée !");
+    document.querySelector('.container-global').style.opacity = "1";
+}

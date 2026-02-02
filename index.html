@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container-header">
-        <div class="header">
+        <div class="header centered" id="header">
             <div class="title header-item">Seat Search</div>
             
             <div class="input-group">
@@ -26,12 +26,12 @@
                 <input class="header-item" type="number" id="tentacles" name="tentacles" min="10" max="100" placeholder="N°"/>
             </div>
 
-            <a class="header-item btn-start" href="">Start</a>
+            <a class="header-item btn-start" onclick="startSearch(event)">Start</a>
         </div>
     </div>
 
-    <div class="container-global">
-       <div class="amphi-container">
+    <div class="container-global" id="amphi-container">
+       <div class="amphi-container" >
             <svg id="amphi-plan" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
                 <rect x="200" y="20" width="600" height="40" rx="10" class="stage" />
                 <text x="500" y="45" text-anchor="middle" class="stage-text">TABLEAU</text>
