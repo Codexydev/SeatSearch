@@ -4,6 +4,7 @@ body {
     background: #F5F2F0;
     font-family: sans-serif;
     overscroll-behavior: none; 
+    overflow-x: hidden;
 }
 
 /* --- CONTENEUR GLOBAL --- */
@@ -314,7 +315,7 @@ body {
         align-items: center;
     }
     .motivation {
-        margin-top: 10px;
+        margin-top: 0px;
     }
 
 
