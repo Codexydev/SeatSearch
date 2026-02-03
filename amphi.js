@@ -115,10 +115,10 @@ function generateSequentialArray(length) {
 
 const amphiData = {
     "Paris": generateSequentialArray(290), 
-    "Recoura": generateSequentialArray(290).reverse(), 
-    "Niepce": [], 
-    "Bernard": [],
-    "Gevrey": []
+    "Recoura": generateSequentialArray(290), 
+    "Niepce": generateSequentialArray(290), 
+    "Bernard": generateSequentialArray(290),
+    "Gevrey": generateSequentialArray(290)
 };
 
 function setMotivation() {
@@ -205,3 +205,21 @@ function startSearch(event) {
         alert(`Le siège n°${number} est introuvable dans l'amphi ${amphiSelect} !`);
     }
 }
+
+
+const inputNumber = document.getElementById('number-input');
+
+// placer le curseur à la fin du input number lors du focus
+inputNumber.addEventListener('focus', function() {
+    setTimeout(() => {
+        const val = this.value;
+        this.value = ''; 
+        this.value = val;
+    }, 0);
+});
+
+
+inputNumber.addEventListener('click', function() {
+    const len = this.value.length;
+    this.setSelectionRange(len, len);
+});
