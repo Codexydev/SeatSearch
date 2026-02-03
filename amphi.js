@@ -97,8 +97,20 @@ for (let s = 0; s < 4; s++) {
 
 // --- FONCTION DE RECHERCHE ---
 function startSearch(event) {
-    event.preventDefault(); 
+    event.preventDefault();
     const header = document.getElementById('header');
+    const number = document.getElementById('number-input').value;
+    const seat = document.getElementById(`seat-${number}`);
+    const seats = document.querySelectorAll('.seat');
+
+    // Réinitialisation des styles
+    seats.forEach(s => s.classList.remove('highlighted'));
+    if (seat) {
+        seat.classList.add('highlighted');
+    }else {
+        alert("Numéro de siège invalide !");
+    }
+
     if(header) header.classList.remove('centered'); // Petit check de sécurité
     console.log("Animation lancée !");
     
