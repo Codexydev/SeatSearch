@@ -23,7 +23,6 @@ body {
     100%{
         opacity: 100;
     }
-
 }
 
 /* --- HEADER (Version Desktop) --- */
@@ -134,8 +133,9 @@ a.header-item {
     font-weight: 300;
     text-decoration: none;
     white-space: nowrap;
+    transition: all 0.2s ease-in-out;
 }
-a.header-item:hover { background-color: #14669e; }
+a.header-item:hover { background-color: #14669e;transform: scale(1.03); }
 
 /* --- CARTE / AMPHI (Desktop) --- */
 .container-global{
@@ -166,7 +166,8 @@ svg {
     display: block;
 }
 
-.stage { fill: #e0e0e0; }
+.stage { fill: #e0e0e0; rx: 15;}
+
 .stage-text {
     font-family: "Google Sans Code", monospace;
     font-size: 14px;
@@ -190,6 +191,45 @@ svg {
     transform: scale(1.3);
 }
 
+/* .motivation{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.motivation-text{
+    border: red solid 1px;
+    font-size: 14px;
+    font-family: "Google Sans Code", monospace;
+    font-weight: 400;
+    color: #555555;
+} */
+
+
+.motivation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0; 
+    animation: fadeIn 2s ease-in forwards; 
+}
+
+.motivation-text {
+    font-family: "Google Sans Code", monospace;
+    color: #555;
+    font-size: 14px;
+    text-align: center;
+    max-width: 80%;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
 .footer {
     text-align: center;
     width: 90%;
@@ -209,8 +249,6 @@ svg {
     z-index: 10;
     position: fixed;
     bottom: 20px;
-    /* left: 50%;
-    transform: translateX(-50%); */
 
     animation: load-footer 2.6s cubic-bezier(0.280, 0.840, 0.420, 1.000) forwards;
     opacity: 0;
@@ -275,6 +313,10 @@ body {
         display: flex;
         align-items: center;
     }
+    .motivation {
+        margin-top: 10px;
+    }
+
 
     svg {
         min-width: 140vw; 

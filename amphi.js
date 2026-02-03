@@ -62,7 +62,7 @@ for (let r = 0; r < config.rows; r++) {
 
     blocksStructure.forEach((seatsInBlock, blockIndex) => {
         for (let s = 0; s < seatsInBlock; s++) {
-            drawSeat(rowX, rowY); // Appel de la fonction
+            drawSeat(rowX, rowY);
             rowX += config.seatSize + config.gap;
         }
 
@@ -121,6 +121,49 @@ const amphiData = {
     "Gevrey": []
 };
 
+function setMotivation() {
+    // C'est ici que ça bloquait : on utilise querySelector pour une classe
+    const motivationDiv = document.querySelector('.motivation-text');
+    
+    if (motivationDiv) {
+        const phrases = [
+            "Courage, tu vas gérer ! 🚀",
+            "Respire un bon coup, ça va bien se passer. 🧘‍♂️",
+            "La réussite est au bout du stylo ! ✍️",
+            "C'est juste un exam, t'es plus fort que ça. 💪",
+            "Une place trouvée = un point en plus (c'est faux mais on y croit) 😉",
+
+            "Sur un malentendu, ça peut passer ! 🍀",
+            "Si tu ne sais pas, invente avec conviction. 🧠",
+            "L'important c'est de participer... non je rigole, vise le 20 ! 🚀",
+            "Tu as trouvé ta place, c'était le plus dur. Le reste c'est bonus. 😎",
+            "Le talent, c'est 1% d'inspiration et 99% de stylo qui marche. ✍️",
+            "Chat GPT ne ferait pas mieux que toi (promis). 🤖",
+            "C'est juste une feuille de papier, elle ne peut pas te manger. 📄",
+            "Technique ancestrale : répondre au hasard avec assurance. 🎲",
+            
+            "Ce sujet a peur de toi. Regarde-le dans les yeux. 👀",
+            "T'es pas venu ici pour enfiler des perles. 🔥",
+            "Mode 'Génie incompris' activé. 💡",
+            "Tu es le boss final de cet examen. 🥊",
+            "Une étape de plus vers la liberté (et les vacances). 🏖️",
+            "Rien ne t'arrête. Sauf peut-être une panne de réveil. ⏰",
+            
+            "Respire. T'as bossé, ça va payer. 🤝",
+            "Panique pas, t'es plus intelligent que tu ne le crois. 🧘‍♂️",
+            "Dans 2 heures, tu es libre. Tiens bon ! 🏁",
+            "Fais-toi confiance, t'es une machine. 🦾"
+
+        ];
+
+        // Choisir une phrase au hasard
+        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+        
+        // Mettre à jour le texte
+        motivationDiv.innerText = randomPhrase;
+    }
+}
+
 function startSearch(event) {
     event.preventDefault();
 
@@ -128,6 +171,8 @@ function startSearch(event) {
 
     const number = document.getElementById('number-input').value.trim(); 
     const amphiSelect = document.getElementById('amphi-select').value;
+
+    const motivation = document.getElementById('motivation-text');
 
     let seat = null;
     
@@ -151,10 +196,8 @@ function startSearch(event) {
         
         const containerGlobal = document.querySelector('.container-global');
         if (containerGlobal) containerGlobal.style.opacity = "1";
-
-        // setTimeout(() => {
-        //      seat.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
-        // }, 300);
+        
+        setMotivation();
 
     } else {
         alert(`Le siège n°${number} est introuvable dans l'amphi ${amphiSelect} !`);
