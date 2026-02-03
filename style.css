@@ -236,6 +236,10 @@ body {
 
 /* --- VERSION MOBILE --- */
 @media screen and (max-width: 768px) {
+    .header.centered {
+        transform: translateY(30vh);
+    }
+
     .container-header {
         padding: 15px; 
     }
