@@ -199,6 +199,8 @@ function startSearch(event) {
         
         setMotivation();
 
+    } else if(amphiSelect===""){
+        alert("Veuillez sélectionner un amphi !");
     } else {
         alert(`Le siège n°${number} est introuvable dans l'amphi ${amphiSelect} !`);
     }
