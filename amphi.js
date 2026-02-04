@@ -153,7 +153,6 @@ function setMotivation() {
             "Panique pas, t'es plus intelligent que tu ne le crois. 🧘‍♂️",
             "Dans 2 heures, tu es libre. Tiens bon ! 🏁",
             "Fais-toi confiance, t'es une machine. 🦾"
-
         ];
 
         // Choisir une phrase au hasard
@@ -169,7 +168,7 @@ function startSearch(event) {
 
     const header = document.getElementById('header');
 
-    const number = document.getElementById('number-input').value.trim(); 
+    const number = document.getElementById('number-input'); 
     const amphiSelect = document.getElementById('amphi-select').value;
 
     const motivation = document.getElementById('motivation-text');
@@ -177,7 +176,7 @@ function startSearch(event) {
     let seat = null;
     
     if (amphiData[amphiSelect]) {
-        const physicalIndex = amphiData[amphiSelect].indexOf(number);
+        const physicalIndex = amphiData[amphiSelect].indexOf(number.value.trim());
         
         if (physicalIndex !== -1) {
             seat = document.getElementById(`seat-index-${physicalIndex}`);
@@ -201,12 +200,13 @@ function startSearch(event) {
         
         setMotivation();
 
-    } else if (number === "" && amphiSelect === "") {
+    } else if (number.value.trim() === "" && amphiSelect === "") {
     alert("Bon, t'es perdu toi ? Il faut remplir les deux champs !");
-    } else if (amphiSelect === "" && number !== "") {
+    } else if (amphiSelect === "" && number.value.trim() !== "") {
         alert("Bon écoute, c'est peut-être l'heure de regarder dans quel amphi tu n'es pas attendu !");
     } else {
         alert(`Aïe aïe, c'est mal barré pour l'exam, ce siège n'existe pas !`);
+        number.value = '';
     }
 }
 
