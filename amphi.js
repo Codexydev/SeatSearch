@@ -45,12 +45,13 @@ function drawSeat(x, y) {
 
     rect.setAttribute("data-index", globalSeatIndex);
 
+    rect.style.animationDelay = `${globalSeatIndex * 0.004}s`;
+
     const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
     title.textContent = `Siège physique index ${globalSeatIndex}`;
     rect.appendChild(title);
 
     container.appendChild(rect);
-
     globalSeatIndex++;
 }
 

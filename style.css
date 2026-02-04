@@ -218,13 +218,31 @@ svg, .amphi-container {
     letter-spacing: .8px;
 }
 
+@keyframes fadeIn {
+    0%{
+        opacity: 0 !important;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1 !important;
+        transform: scale(1);
+    }
+}
+
 .seat {
     fill: #e0cea6;
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
     transform-box: fill-box; 
     transform-origin: center;
+
+    opacity: 0;
 }
+
+.show-amphi .seat {
+    animation: fadeIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
 .seat:hover {
     fill: #dccba0;
     transform: scale(1.3); 
