@@ -244,3 +244,16 @@ inputNumber.addEventListener('click', function() {
     const len = this.value.length;
     // this.setSelectionRange(len, len);
 });
+
+
+function showLegal(event) {
+    event.preventDefault();
+    alert(
+        "MENTIONS LÉGALES\n\n" +
+        "Éditeur : Développé par Antoine Ragot-Raillat.\n" +
+        "Non affilié officiellement à l'université.\n\n" +
+        "Hébergeur : GitHub Pages (GitHub Inc., USA).\n\n" +
+        "Confidentialité : Ce site ne collecte AUCUNE donnée. " +
+        "Tout se passe sur votre téléphone. Aucun cookie publicitaire."
+    );
+}

@@ -289,6 +289,8 @@ svg, .amphi-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    line-height:10px;
     gap: 10px;
     color: #197BBD;
     z-index: 10;
@@ -372,6 +374,6 @@ svg, .amphi-container {
 
     .motivation {
         margin-top: 20px;
-        transform: translateY(-25px);
+        transform: translateY(-45px);
     }
 }
