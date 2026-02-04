@@ -73,10 +73,11 @@ body {
 select.header-item {
     background-color: #e0cea6;
     color: #ffffff;
-    font-family: "Google Sans Code", monospace;
-    font-size: 14px;
-    font-weight: 500;
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
     border-radius: 30px;
+    font-size: 16px;
     border: none;
     appearance: none;
     -webkit-appearance: none;
@@ -152,6 +153,9 @@ a.header-item:hover { background-color: #14669e;transform: scale(1.03); }
 .amphi-container {
     width: 95%;
     max-width: 1000px;
+    /* margin: 20px auto;
+    background: transparent; */
+
     margin: 0px auto;
     background: white;
     border-radius: 30px;
@@ -159,12 +163,32 @@ a.header-item:hover { background-color: #14669e;transform: scale(1.03); }
     padding: 0px;
     text-align: center;
     overflow: hidden; 
+    
+
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    
+    position: relative;
+    z-index: 1;
+}
+
+.amphi-container.show-amphi {
+    opacity: 1;
+    visibility: visible;
 }
 
 svg {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+svg, .amphi-container {
+    outline: none;
+    border: none;
+    /* Pour mobile : enlève le flash de couleur au tapotement */
+    -webkit-tap-highlight-color: transparent; 
 }
 
 .stage { fill: #e0e0e0; rx: 15;}
@@ -278,6 +302,10 @@ body {
         width: 100%;
         display: flex;
         justify-content: space-between; 
+    }
+
+    select option {
+        text-align: center;
     }
 
     select.header-item { flex: 1; max-width: none; }

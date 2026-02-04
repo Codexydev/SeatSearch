@@ -195,21 +195,24 @@ function startSearch(event) {
         console.log("Animation lancée !");
         
         const containerGlobal = document.querySelector('.container-global');
+        const amphiContainer = document.querySelector('.amphi-container');
         if (containerGlobal) containerGlobal.style.opacity = "1";
+        if (amphiContainer) amphiContainer.classList.add('show-amphi');
         
         setMotivation();
 
-    } else if(amphiSelect===""){
-        alert("Veuillez sélectionner un amphi !");
+    } else if (number === "" && amphiSelect === "") {
+    alert("Bon, t'es perdu toi ? Il faut remplir les deux champs !");
+    } else if (amphiSelect === "" && number !== "") {
+        alert("Bon écoute, c'est peut-être l'heure de regarder dans quel amphi tu n'es pas attendu !");
     } else {
-        alert(`Le siège n°${number} est introuvable dans l'amphi ${amphiSelect} !`);
+        alert(`Aïe aïe, c'est mal barré pour l'exam, ce siège n'existe pas !`);
     }
 }
 
 
 const inputNumber = document.getElementById('number-input');
 
-// placer le curseur à la fin du input number lors du focus
 inputNumber.addEventListener('focus', function() {
     setTimeout(() => {
         const val = this.value;
@@ -221,5 +224,5 @@ inputNumber.addEventListener('focus', function() {
 
 inputNumber.addEventListener('click', function() {
     const len = this.value.length;
-    this.setSelectionRange(len, len);
+    // this.setSelectionRange(len, len);
 });
