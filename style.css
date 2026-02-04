@@ -119,6 +119,16 @@ input.header-item {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: all 0.25s ease-in-out;
 }
+
+input::placeholder{
+    color: #ffffff;
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    font-size: 15px;
+    text-align: center;
+}
+
 input.header-item:hover { background-color: #dccba0; transform: translateY(-1px); }
 input.header-item:focus {
     background-color: #ffffff;
