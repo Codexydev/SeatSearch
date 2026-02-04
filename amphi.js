@@ -163,7 +163,11 @@ function setMotivation() {
     }
 }
 
-function startSearch(event) {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function startSearch(event) {
     event.preventDefault();
 
     const header = document.getElementById('header');
@@ -174,6 +178,7 @@ function startSearch(event) {
     const motivation = document.getElementById('motivation-text');
 
     let seat = null;
+    
     
     if (amphiData[amphiSelect]) {
         const physicalIndex = amphiData[amphiSelect].indexOf(number.value.trim());
@@ -187,7 +192,19 @@ function startSearch(event) {
 
     seats.forEach(s => s.classList.remove('highlighted'));
 
+
     if (seat) {
+        if( navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+        ){
+            await sleep(100);
+        }
+
         seat.classList.add('highlighted');
         if (header) header.classList.remove('centered');
         
