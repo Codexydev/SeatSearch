@@ -73,11 +73,11 @@ body {
 select.header-item {
     background-color: #e0cea6;
     color: #ffffff;
-    font-family: "Doto", sans-serif;
+    font-family: "Comic Neue", cursive;
     font-optical-sizing: auto;
-    font-weight: 800;
+    font-weight: 600;
     border-radius: 30px;
-    font-size: 16px;
+    font-size: 17px;
     border: none;
     appearance: none;
     -webkit-appearance: none;
@@ -107,9 +107,10 @@ option {
 input.header-item {
     background-color: #e0cea6;
     color: #ffffff;
-    font-family: "Google Sans Code", monospace;
+    font-family: "Comic Neue", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
     font-size: 14px;
-    font-weight: 500;
     border-radius: 30px;
     border: none;
     text-align: center;
@@ -122,9 +123,9 @@ input.header-item {
 
 input::placeholder{
     color: #ffffff;
-    font-family: "Doto", sans-serif;
+    font-family: "Comic Neue", cursive;
     font-optical-sizing: auto;
-    font-weight: 1000;
+    font-weight: 600;
     font-size: 15px;
     text-align: center;
 }
@@ -144,8 +145,9 @@ a.header-item {
     background-color: #197BBD;
     padding: 10px 20px; 
     border-radius: 30px;
-    color: #ffffff;
+    color: #fff;
     font-family: "Ultra", serif;
+    letter-spacing: .5px;
     font-weight: 300;
     text-decoration: none;
     white-space: nowrap;
@@ -208,10 +210,12 @@ svg, .amphi-container {
 .stage { fill: #e0e0e0; rx: 15;}
 
 .stage-text {
-    font-family: "Google Sans Code", monospace;
-    font-size: 14px;
+    font-family: "Comic Neue", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 18px;
     fill: #888;
-    letter-spacing: 2px;
+    letter-spacing: .8px;
 }
 
 .seat {
