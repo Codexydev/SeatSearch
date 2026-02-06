@@ -194,13 +194,13 @@ a.header-item:hover { background-color: #14669e;transform: scale(1.03); }
     visibility: visible;
 }
 
-svg {
+.amphi-plan{
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-svg, .amphi-container {
+.amphi-plan, .amphi-container {
     outline: none;
     border: none;
     /* Pour mobile : enlève le flash de couleur au tapotement */
@@ -301,6 +301,28 @@ svg, .amphi-container {
     opacity: 0;
 }
 
+.personalPageLink{
+    display: flex;
+    text-decoration: none;
+    border-bottom: #197BBD solid 0.1px;
+    color: #197BBD;
+    align-items: center;
+    gap: 5px;
+}
+
+.ico{
+    padding-bottom: 1px;
+    width: 14px;
+    fill: #197BBD;
+    transition: fill 0.2s ease-in-out;
+}
+
+.span-foot {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 @keyframes load-footer {
     0%{
         transform: translateY(10vh);
@@ -367,7 +389,7 @@ svg, .amphi-container {
         overflow-x: hidden !important;
     }
 
-    svg {
+    #amphi-plan {
         min-width: 140vw; 
         height: auto;
     }
