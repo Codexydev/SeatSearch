@@ -16,6 +16,10 @@ body {
     box-sizing: border-box;
 }
 
+.container-footer {
+    min-height: 100px; 
+}
+
 @keyframes load-bounce {
     20% {
         opacity: 0;
