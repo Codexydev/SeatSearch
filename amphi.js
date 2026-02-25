@@ -1,7 +1,7 @@
 // --- CONFIGURATION ---
 const svgWidth = 1000;
 const config = {
-    rows: 13,           // Nombre de rangs standards
+    rows: 14,           // Nombre de rangs standards
     seatSize: 20,       // Taille d'un siège
     gap: 6,             // Espace entre les sièges
     aisleWidth: 50,     // Largeur des allées
@@ -114,11 +114,56 @@ function generateSequentialArray(length) {
     return Array.from({length: length}, (_, i) => (i + 1).toString());
 }
 
+const amphiMapPersonalisee = [
+    // --- RANG 0 (En bas près du tableau) : De Gauche à Droite ---
+    "1", "-1", "2", "-1", "3", "4", "-1", "5", "-1", "6", "-1", "7", "-1", "8", "-1", "9", "10", "-1", "11", "-1", "12", 
+    
+    // --- RANG 1 : Vide ---
+    "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", 
+    
+    // --- RANG 2 : De Droite à Gauche ---
+    "24", "-1", "23", "-1", "22", "21", "-1", "20", "-1", "19", "-1", "18", "-1", "17", "-1", "16", "15", "-1", "14", "-1", "13", 
+    
+    // --- RANG 3 : Vide ---
+    "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", 
+    
+    // --- RANG 4 : De Gauche à Droite ---
+    "25", "-1", "26", "-1", "27", "28", "-1", "29", "-1", "30", "-1", "31", "-1", "32", "-1", "33", "34", "-1", "35", "-1", "36", 
+    
+    // --- RANG 5 : Vide ---
+    "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", 
+    
+    // --- RANG 6 : De Droite à Gauche ---
+    "48", "-1", "47", "-1", "46", "45", "-1", "44", "-1", "43", "-1", "42", "-1", "41", "-1", "40", "39", "-1", "38", "-1", "37", 
+    
+    // --- RANG 7 : Vide ---
+    "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", 
+    
+    // --- RANG 8 : De Gauche à Droite ---
+    "49", "-1", "50", "-1", "51", "52", "-1", "53", "-1", "54", "-1", "55", "-1", "56", "-1", "57", "58", "-1", "59", "-1", "60", 
+    
+    // --- RANG 9 : Vide ---
+    "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", 
+    
+    // --- RANG 10 : De Droite à Gauche ---
+    "72", "-1", "71", "-1", "70", "69", "-1", "68", "-1", "67", "-1", "66", "-1", "65", "-1", "64", "63", "-1", "62", "-1", "61", 
+    
+    // --- RANG 11 : Vide ---
+    "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", 
+    
+    // --- RANG 12 (Tout en haut) : De Gauche à Droite ---
+    "73", "-1", "74", "-1", "75", "76", "-1", "77", "-1", "78", "-1", "79", "-1", "80", "-1", "81", "82", "-1", "83", "-1", "84", 
+    
+    // --- RANG DU FOND (Spécial, 15 sièges) : Vide ---
+    "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"  
+];
+
+
 const amphiData = {
-    "Paris": generateSequentialArray(290), 
-    "Recoura": generateSequentialArray(290), 
-    "Niepce": generateSequentialArray(290), 
-    "Bernard": generateSequentialArray(290),
+    "Paris": amphiMapPersonalisee, 
+    "Recoura": amphiMapPersonalisee, 
+    "Niepce": (amphiMapPersonalisee+4), // On inverse pour faire comme si c'était de droite à gauche   
+    "Bernard": amphiMapPersonalisee,
     "Gevrey": generateSequentialArray(290)
 };
 
