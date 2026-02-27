@@ -322,3 +322,7 @@ function showLegal(event) {
         "Tout se passe sur votre téléphone. Aucun cookie publicitaire."
     );
 }
+
+
+// Mais dit moi tu est curieux !
+// Si tu lis ça, c'est que tu as probablement jeté un œil au code source. J'espère que tu as trouvé ta place dans l'amphi ! N'hésite pas à partager le site avec tes camarades pour les aider à trouver la leur aussi. 🚀
