@@ -109,11 +109,6 @@ document.onkeydown = function (evt) {
     }
 };
 
-
-function generateSequentialArray(length) {
-    return Array.from({length: length}, (_, i) => (i + 1).toString());
-}
-
 const amphiMapPersonalisee = [
     // --- RANG 0 (Bas) : Gauche à Droite (Places 1-12) ---
     "1", "-1", "2", "-1", "3", "4", "-1", "5", "-1", "6", "-1", "7", "-1", "8", "-1", "9", "10", "-1", "11", "-1", "12", 
@@ -169,12 +164,34 @@ const amphiMapPersonalisee = [
 ];
 
 
+function createReverseMap(originalMap) {
+    let maxSeat = 0;
+    originalMap.forEach(seat => {
+        if (seat !== "-1") {
+            const num = parseInt(seat, 10);
+            if (num > maxSeat) maxSeat = num;
+        }
+    });
+
+    return originalMap.map(seat => {
+        if (seat === "-1") {
+            return "-1";
+        } else {
+            const currentNum = parseInt(seat, 10);
+            const newNum = (maxSeat + 1) - currentNum;
+            return newNum.toString();
+        }
+    });
+}
+
+const amphiMapReverse = createReverseMap(amphiMapPersonalisee);
+
 const amphiData = {
-    "Paris": amphiMapPersonalisee, 
-    "Recoura": amphiMapPersonalisee, 
-    "Niepce": (amphiMapPersonalisee), // On inverse pour faire comme si c'était de droite à gauche
+    "Paris": amphiMapReverse, 
+    "Recoura": amphiMapReverse, 
+    "Niepce": amphiMapReverse, 
     "Bernard": amphiMapPersonalisee,
-    "Gevrey": generateSequentialArray(290)
+    "Gevrey": amphiMapReverse
 };
 
 function setMotivation() {
