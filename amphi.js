@@ -29,7 +29,7 @@ const totalContentWidth =
 
 const container = document.getElementById('seats-container');
 
-let globalSeatIndex = 0; // On compte les sièges de 0 à 294
+let globalSeatIndex = 0; 
 
 function drawSeat(x, y) {
     const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
@@ -74,7 +74,6 @@ for (let r = 0; r < config.rows; r++) {
 }
 
 // --- 2. AJOUT DU RANG DU FOND (Le 14ème rang spécifique) ---
-
 const backRowY = config.startY + (config.rows * (config.seatSize + config.rowGap));
 const baseStartX = (svgWidth - totalContentWidth) / 2;
 
@@ -195,7 +194,6 @@ const amphiData = {
 };
 
 function setMotivation() {
-    // C'est ici que ça bloquait : on utilise querySelector pour une classe
     const motivationDiv = document.querySelector('.motivation-text');
     
     if (motivationDiv) {
@@ -279,8 +277,6 @@ async function startSearch(event) {
         seat.classList.add('highlighted');
         if (header) header.classList.remove('centered');
         
-        console.log("Animation lancée !");
-        
         const containerGlobal = document.querySelector('.container-global');
         const amphiContainer = document.querySelector('.amphi-container');
         if (containerGlobal) containerGlobal.style.opacity = "1";
@@ -312,7 +308,6 @@ inputNumber.addEventListener('focus', function() {
 
 inputNumber.addEventListener('click', function() {
     const len = this.value.length;
-    // this.setSelectionRange(len, len);
 });
 
 
