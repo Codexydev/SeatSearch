@@ -318,8 +318,7 @@ function showLegal(event) {
         "Éditeur : Développé par Antoine Ragot-Raillat.\n" +
         "Non affilié officiellement à l'université.\n\n" +
         "Hébergeur : GitHub Pages (GitHub Inc., USA).\n\n" +
-        "Confidentialité : Ce site ne collecte AUCUNE donnée. " +
-        "Tout se passe sur votre téléphone. Aucun cookie publicitaire."
+        "Confidentialité : Aucun cookie traceur/publicitaire. Seules les données techniques (IP partiellement masquée, navigateur, heure) sont conservées 6 mois maximum pour la sécurité et la maintenance du site."
     );
 }
 
