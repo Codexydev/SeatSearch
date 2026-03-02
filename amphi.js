@@ -108,7 +108,7 @@ document.onkeydown = function (evt) {
     }
 };
 
-const amphiMapPersonalisee = [
+const amphiMap = [
     // --- RANG 0 (Bas) : Gauche à Droite (Places 1-12) ---
     "1", "-1", "2", "-1", "3", "4", "-1", "5", "-1", "6", "-1", "7", "-1", "8", "-1", "9", "10", "-1", "11", "-1", "12", 
     
@@ -183,13 +183,13 @@ function createReverseMap(originalMap) {
     });
 }
 
-const amphiMapReverse = createReverseMap(amphiMapPersonalisee);
+const amphiMapReverse = createReverseMap(amphiMap);
 
 const amphiData = {
+    "Recoura": amphiMap, 
     "Paris": amphiMapReverse, 
-    "Recoura": amphiMapPersonalisee, 
+    "Bernard": amphiMap,
     "Niepce": amphiMapReverse, 
-    "Bernard": amphiMapPersonalisee,
     "Gevrey": amphiMapReverse
 };
 
