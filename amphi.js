@@ -187,7 +187,7 @@ const amphiMapReverse = createReverseMap(amphiMapPersonalisee);
 
 const amphiData = {
     "Paris": amphiMapReverse, 
-    "Recoura": amphiMapReverse, 
+    "Recoura": amphiMapPersonalisee, 
     "Niepce": amphiMapReverse, 
     "Bernard": amphiMapPersonalisee,
     "Gevrey": amphiMapReverse
