@@ -244,7 +244,7 @@ const amphiData = {
     "Paris": amphiMapParis, 
     "Bernard": amphiMap,
     "Niepce": amphiMapReverse, 
-    "Gevrey": amphiMapReverse
+    "Gevrey": amphiMap
 };
 
 function setMotivation() {
