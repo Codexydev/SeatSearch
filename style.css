@@ -18,6 +18,8 @@ body {
 
 .container-footer {
     min-height: 100px; 
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
 }
 
 @keyframes load-bounce {
@@ -283,7 +285,9 @@ a.header-item:hover { background-color: #14669e;transform: scale(1.03); }
     width: 90%;
     max-width: 1000px;
     padding: 12px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.78);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
     border-radius: 50px;
     font-size: 12px;
     font-family: "Google Sans Code", monospace;
