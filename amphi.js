@@ -333,8 +333,10 @@ async function startSearch(event) {
         
         const containerGlobal = document.querySelector('.container-global');
         const amphiContainer = document.querySelector('.amphi-container');
+        const mobileQr = document.querySelector('.mobile-qr');
         if (containerGlobal) containerGlobal.style.opacity = "1";
         if (amphiContainer) amphiContainer.classList.add('show-amphi');
+        if (mobileQr) mobileQr.classList.add('visible');
         
         setMotivation();
 

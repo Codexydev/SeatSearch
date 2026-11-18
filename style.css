@@ -348,7 +348,7 @@ a.header-item:hover { background-color: #14669e;transform: scale(1.03); }
 
 /* --- VERSION MOBILE --- */
 @media screen and (max-width: 768px) {
-    .mobile-qr {
+    .mobile-qr.visible {
         display: flex;
         align-items: center;
         justify-content: center;
