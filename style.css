@@ -262,7 +262,6 @@ a.header-item:hover { background-color: #14669e;transform: scale(1.03); }
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    margin-bottom: 20px;
     opacity: 0; 
     animation: fadeIn 2s ease-in forwards; 
 }
